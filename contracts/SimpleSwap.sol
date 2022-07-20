@@ -6,5 +6,6 @@ import '@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol';
 import '@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol';
 
 contract SimpleSwap {
-   
+   constructor() {
+   }
 }
