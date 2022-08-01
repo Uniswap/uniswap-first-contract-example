@@ -1,1 +1,0 @@
-# Basic Uniswap Integration Environment
