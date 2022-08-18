@@ -32,7 +32,7 @@ describe("SimpleSwap", function () {
     /* Check Initial DAI Balance */ 
     const DAI = new hre.ethers.Contract(DAI_ADDRESS, ercAbi, signers[0]);
     const expandedDAIBalanceBefore = await DAI.balanceOf(signers[0].address);
-    const DAIBalanceBefore = Number(hre.ethers.utils.formatEther(expandedDAIBalanceBefore));
+    const DAIBalanceBefore = Number(hre.ethers.utils.formatUnits(expandedDAIBalanceBefore, DAI_DECIMALS));
 
     /* Approve the swapper contract to spend WETH for me */
     await WETH.approve(simpleSwap.address, hre.ethers.utils.parseEther("1"));
