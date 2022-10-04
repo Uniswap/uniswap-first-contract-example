@@ -1,14 +1,12 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity ^0.8.11;
-pragma abicoder v2;
+
 
 
 
 contract SimpleSwap {
     ISwapRouter public immutable router;
-    address public constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
-    address public constant WETH9 = 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2;
-    uint24 public constant feeTier = 3000;
+
 
     constructor(ISwapRouter _swapRouter) {
         router = _swapRouter;
