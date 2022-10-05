@@ -37,15 +37,16 @@ contract SimpleSwap {
     }
 
     function swapExactInputMultiHop(
-        bytes calldata path,
+        bytes[5] calldata paths,
         address tokenIn,
         uint amountIn
     ) external returns (uint amountOut) {
         IERC20(tokenIn).transferFrom(msg.sender, address(this), amountIn);
         IERC20(tokenIn).approve(address(router), amountIn);
 
+
         ISwapRouter.ExactInputParams memory params = ISwapRouter.ExactInputParams({
-            path: path,
+            path: abi.encodePacked(paths[0], paths[1], paths[2], paths[3], paths[4]),
             recipient: msg.sender,
             deadline: block.timestamp,
             amountIn: amountIn,
